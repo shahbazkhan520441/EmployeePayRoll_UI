@@ -1,0 +1,44 @@
+<!-- Interpolation -->
+
+<h2>Welcome to {{name}}</h2>
+
+<!-- Property Binding -->
+<!-- HTML Attribute and DOM property -->
+<!-- <input type="text" value={{name}}> -->
+<input type="text" [disabled]="disabled">
+<br><br>
+<input type="text" disabled={{disabled}} >
+<br><br>
+<button (click)="enableBox()">Enable TextBox</button>
+
+<!-- Two way DataBinding -->    
+<input type="text" [(ngModel)]="name">
+<h2>{{name}}</h2>
+
+
+<!-- Structural Directives -->
+
+<div *ngFor="let fruit of fruits">
+    <h2>{{fruit}}</h2>
+</div>
+
+[<div [ngSwitch]="color">
+    <div *ngSwitchCase="'black'">Black</div>
+    <div *ngSwitchCase="'yellow'">Yellow</div>
+    <div *ngSwitchCase="'green'">Green</div>
+    <div *ngSwitchDefault>Pick again!!</div>
+</div>]
+
+
+<h2 *ngIf="displayName; then thenBlock;">Bridgelabz</h2>
+
+<!-- Template Reference Variable -->
+
+<ng-template #thenBlock>
+    <h2>Welcome 1</h2>
+</ng-template>
+
+<ng-template #elseBlock>
+    <h2>Welcome 2</h2>
+</ng-template>
+
